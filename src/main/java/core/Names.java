@@ -30,7 +30,7 @@ public class Names implements Serializable{
     }
     public int addName(String alias){
         final int s = this.NAMES.size();
-        if(alias != null && alias.isBlank()) return s;
+        if(alias == null && alias.isBlank()) return s;
         if(this.NAMES.add(alias))this.mark = s;
         return s;
     }
