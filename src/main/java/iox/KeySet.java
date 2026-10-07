@@ -15,6 +15,10 @@ import java.util.HashMap;
 public class KeySet {
     private HashMap<Integer, Action> keys = new HashMap<>(); // for now non-final.
     public KeySet(){}
+    public KeySet setKey(int keyCode, Action action){
+        this.keys.put(keyCode, action);
+        return this;
+    }
     public boolean bind(int keyCode, Action action){
         if(action == null || this.keys.containsKey(keyCode))return false;
         this.keys.putIfAbsent(keyCode, action);
