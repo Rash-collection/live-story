@@ -18,6 +18,8 @@ import static iox.MouseTypeEvent.*;
  */
 public class Micez implements MouseListener, MouseMotionListener, MouseWheelListener{
     private MouseSet evtz = new MouseSet();
+    public Micez(){}
+    public MouseSet getEventor(){return this.evtz;}
     @Override public void mouseClicked(MouseEvent e) {
         this.evtz.execute(CLICKED, e);
     }
