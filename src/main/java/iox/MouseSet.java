@@ -13,7 +13,7 @@ import java.util.EnumMap;
  * @author rash4
  */
 public class MouseSet {
-    private EnumMap<MouseTypeEvent, Action> actions = new EnumMap(MouseTypeEvent.class);
+    private EnumMap<MouseTypeEvent, Action> actions = new EnumMap<>(MouseTypeEvent.class);
     public MouseSet(){}
     public MouseSet setAction(MouseTypeEvent eventType, Action acts){
         this.actions.put(eventType, acts);
