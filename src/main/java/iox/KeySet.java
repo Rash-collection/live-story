@@ -13,7 +13,7 @@ import java.util.HashMap;
  * @author rash4
  */
 public class KeySet {
-    private HashMap<Integer, Action> keys;
+    private HashMap<Integer, Action> keys = new HashMap<>(); // for now non-final.
     public KeySet(){}
     public boolean bind(int keyCode, Action action){
         if(action == null || this.keys.containsKey(keyCode))return false;
@@ -32,5 +32,9 @@ public class KeySet {
     }
     public Action get(int keyCode){
         return this.keys.get(keyCode);
+    }
+    public void execute(KeyEvent e){
+        final var evt = this.keys.get(e.getKeyCode());
+        if(evt != null) evt.execute(e);
     }
 }

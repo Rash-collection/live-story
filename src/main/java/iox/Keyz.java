@@ -20,13 +20,13 @@ public class Keyz implements KeyListener{
         this.released = new KeySet();
     }
     @Override public void keyTyped(KeyEvent e) {
-        this.typed.get(e.getKeyCode()).execute(e);
+        this.typed.execute(e);
     }
     @Override public void keyPressed(KeyEvent e) {
-        this.pressed.get(e.getKeyCode()).execute(e);
+        this.pressed.execute(e);
     }
     @Override public void keyReleased(KeyEvent e) {
-        this.released.get(e.getKeyCode()).execute(e);
+        this.released.execute(e);
     }
     public KeySet getKeyTyped(){return this.typed;}
     public KeySet getKeyPressed(){return this.pressed;}
